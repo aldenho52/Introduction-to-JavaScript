@@ -2,33 +2,37 @@
 //Task a: declare a variable called votingAge, console log true if age > 18 (no function required)
 
 
-let votingAge = 
+let votingAge = 25;
+if (votingAge > 18) {
+    console.log(true)
+}
 
 //Task b: declare a variable and then use a conditional to change the value of that variable based on the value assigned to a second variable (no function required)
 
-
-
-
+let variable = 15;
+variable = 19;
 
 //Task c: Convert string ("1999") to integer (1999)  (no function required) // hint look up the Number method
 
-
-
+let str = '1999'
+console.log(Number(str))
 
 
 //Task d: Write a function to multiply a*b 
 
-
-
-
+let multiply = function (a, b) {
+    return a*b
+}
 
 /************************************************************** Task 2 **************************************************************/
 //Age in Dog years
 //write a function that takes your age and returns it to you in dog years - they say that 1 human year is equal to seven dog years 
 
-
-
-
+let age = 7
+const findDogYears = function (age) {
+    let dogYears = (age * 7)
+    return dogYears
+}
 
 /************************************************************** Task 3 **************************************************************/
 //Dog feeder 
@@ -49,8 +53,26 @@ let votingAge =
 // when you are finished invoke your function with the weight of 15 lbs and the age of 1 year - if your calculations are correct your result should be 0.44999999999999996
   
 
+const findFeedingAmount = function (dogYears, weight) {
+    let month = 1/12;
+    if (dogYears >= 1 && weight <= 5) {
+        return(weight * 0.05)
+    } else if (dogYears >= 1 && weight <= 10) {
+        return(weight * 0.04)
+    } else if (dogYears >= 1 && weight <= 15) {
+        return(weight * 0.03)
+    } else if (dogYears >= 1 && weight > 15) {
+        return(weight * 0.02)
+    } else if (dogYears >= (month*2) && dogYears <= (month*4)) {
+        return (weight * .1)
+    } else if (dogYears >= (month*4) && dogYears <= (month*7)) {
+        return (weight * .05)
+    } else  {
+        return (weight * .04)
+    }
+}
 
-
+console.log(findFeedingAmount(1, 15))
 
 /************************************************************** Task 4 **************************************************************/
 // Rock, Paper, Sissors
