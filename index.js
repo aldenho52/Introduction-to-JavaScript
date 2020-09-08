@@ -180,11 +180,22 @@ const gradeCalc = (score) => {
 // Hint - you may need to study tomorrow's traning kit on arrays 
 // try looking up the .includes() method
 
-const vowelCount = (str) => {
-    return str.includes(/aeiou/g)
+
+let vowelCount = (str) => {
+  var vowelList = 'aeiouAEIOU';
+  var vcount = 0;
+  
+  for(var x = 0; x < str.length ; x++)
+  {
+    if (vowelList.indexOf(str[x]) !== -1)
+    {
+      vcount += 1;
+    }
+  }
+  return vcount;
 }
 
-console.log(vowelCount('asdfadfs'))
+console.log(vowelCount("dad"))
 
 /************************************************************** Stretch **************************************************************/
 //Take Rock, Paper, Sissors further
@@ -192,5 +203,31 @@ console.log(vowelCount('asdfadfs'))
 
 
 
+alert('welcome to rock paper scissors!')
+
+let enterGame = prompt('Please pick rock, paper, or scissors')
 
 
+
+const rpsWindowObject = function (enterGame, computerChoice) {
+    if (enterGame === 'paper' && computerChoice === 'rock') {
+      return 'Your paper beats comps rock, you win!'
+  } else if (enterGame === 'paper' && computerChoice === 'scissors') {
+      return 'Your paper loses to comps scissors, you lose!'
+  } else if (enterGame === 'rock' && computerChoice === 'paper') {
+      return 'Your rock loses to comps paper, you lose!'
+  } else if (enterGame === 'rock' && computerChoice === 'scissors') {
+      return 'Your rock beats comps scissors, you win!'
+  } else if (enterGame === 'scissors' && computerChoice === 'paper') {
+      return 'Your scissors beats comps paper, you win!'
+  } else if (enterGame === 'scissors' && computerChoice === 'rock') {
+      return 'Your scissors loses to comps rock, you lose!'
+  } else {
+      return 'Draw, play again!'
+  }
+}
+
+if (enterGame === 'rock' || enterGame === 'paper' || enterGame === 'scissors') {
+    let decision = rpsWindowObject(enterGame, computerChoice)
+    alert(decision)
+}
