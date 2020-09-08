@@ -10,8 +10,11 @@ if (votingAge > 18) {
 //Task b: declare a variable and then use a conditional to change the value of that variable based on the value assigned to a second variable (no function required)
 
 let variable = 15;
-variable = 19;
+if (variable <18) {
+    variable = 18;
+}
 
+console.log(variable)
 //Task c: Convert string ("1999") to integer (1999)  (no function required) // hint look up the Number method
 
 let str = '1999'
@@ -206,8 +209,6 @@ console.log(vowelCount("dad"))
 alert('welcome to rock paper scissors!')
 
 let enterGame = prompt('Please pick rock, paper, or scissors')
-
-
 
 const rpsWindowObject = function (enterGame, computerChoice) {
     if (enterGame === 'paper' && computerChoice === 'rock') {
